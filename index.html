@@ -36,7 +36,7 @@
         
         <div class="container">
             <div class="hero-grid">
-                <div class="hero-content">
+            <div class="hero-content">
                     <div class="hero-badge">
                         <i class="fas fa-shield-alt"></i>
                         <span>HIPAA Compliant • Evidence-Based</span>
@@ -355,6 +355,58 @@
                         </div>
                     </button>
                 </div>
+
+                <!-- Mobile Menu System (Hidden on Desktop) -->
+                <div class="mobile-section-selector" style="display: none;">
+                    <div class="mobile-menu-header" onclick="toggleMobileMenu()">
+                        <span id="currentSectionTitle">👤 Demographics - Patient Info</span>
+                        <i class="fas fa-chevron-down" id="menuChevron"></i>
+                    </div>
+                    <div class="mobile-menu-sections" id="mobileSections">
+                        <div class="mobile-section-item active" onclick="selectMobileSection(0, '👤 Demographics - Patient Info')">
+                            <div class="mobile-section-number">1</div>
+                            <div>
+                                <div>Demographics</div>
+                                <div style="font-size: 4px; color: #6b7280;">Patient Info</div>
+                            </div>
+                        </div>
+                        <div class="mobile-section-item" onclick="selectMobileSection(1, '🩺 Chief Complaint - Present Illness')">
+                            <div class="mobile-section-number">2</div>
+                            <div>
+                                <div>Chief Complaint</div>
+                                <div style="font-size: 4px; color: #6b7280;">Present Illness</div>
+                            </div>
+                        </div>
+                        <div class="mobile-section-item" onclick="selectMobileSection(2, '📋 History - Medical & Social')">
+                            <div class="mobile-section-number">3</div>
+                            <div>
+                                <div>History</div>
+                                <div style="font-size: 4px; color: #6b7280;">Medical & Social</div>
+                            </div>
+                        </div>
+                        <div class="mobile-section-item" onclick="selectMobileSection(3, '🔍 Physical Exam - Vitals & Systems')">
+                            <div class="mobile-section-number">4</div>
+                            <div>
+                                <div>Physical Exam</div>
+                                <div style="font-size: 4px; color: #6b7280;">Vitals & Systems</div>
+                            </div>
+                        </div>
+                        <div class="mobile-section-item" onclick="selectMobileSection(4, '🧪 Investigations - Labs & Imaging')">
+                            <div class="mobile-section-number">5</div>
+                            <div>
+                                <div>Investigations</div>
+                                <div style="font-size: 4px; color: #6b7280;">Labs & Imaging</div>
+                            </div>
+                        </div>
+                        <div class="mobile-section-item" onclick="selectMobileSection(5, '💊 Medications - Current & Allergies')">
+                            <div class="mobile-section-number">6</div>
+                            <div>
+                                <div>Medications</div>
+                                <div style="font-size: 4px; color: #6b7280;">Current & Allergies</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
                 <form id="diagnosisForm" class="assessment-form">
                     <!-- Demographics Panel -->
@@ -374,11 +426,11 @@
                             </div>
                             
                             <div class="input-group">
-                                <label>Gender</label>
-                                <select id="patientGender" required>
-                                    <option value="">Select gender</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
+                            <label>Gender</label>
+                            <select id="patientGender" required>
+                                <option value="">Select gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
                                     <option value="non-binary">Non-binary</option>
                                     <option value="other">Other</option>
                                 </select>
@@ -396,8 +448,8 @@
                                     <option value="hispanic">Hispanic/Latino</option>
                                     <option value="asian">Asian</option>
                                     <option value="native-american">Native American</option>
-                                    <option value="other">Other</option>
-                                </select>
+                                <option value="other">Other</option>
+                            </select>
                                 <div class="input-icon">
                                     <i class="fas fa-globe"></i>
                                 </div>
@@ -428,7 +480,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- History Tab -->
                     <div class="assessment-panel" id="history-tab">
                         <div class="panel-header">
@@ -569,7 +621,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="selected-symptoms" id="selectedSymptoms"></div>
+                        <div class="selected-symptoms" id="selectedSymptoms"></div>
                             </div>
                         </div>
                     </div>
@@ -665,7 +717,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Investigations Tab -->
                     <div class="assessment-panel" id="investigations-tab">
                         <div class="panel-header">
@@ -744,7 +796,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Medications Tab -->
                     <div class="assessment-panel" id="medications-tab">
                         <div class="panel-header">
@@ -779,7 +831,7 @@ Example: Lisinopril 10mg daily, Metformin 500mg twice daily"></textarea>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="assessment-navigation">
                         <button type="button" id="prevStep" class="nav-button secondary">
                             <i class="fas fa-arrow-left"></i>
@@ -804,7 +856,7 @@ Example: Lisinopril 10mg daily, Metformin 500mg twice daily"></textarea>
                             <i class="fas fa-brain"></i>
                             Generate AI Diagnosis
                             <div class="button-loader" id="loadingSpinner"></div>
-                        </button>
+                    </button>
                     </div>
                 </form>
             </div>
@@ -820,4 +872,4 @@ Example: Lisinopril 10mg daily, Metformin 500mg twice daily"></textarea>
 
     <script src="script.js"></script>
 </body>
-</html>
+</html> 

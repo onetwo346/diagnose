@@ -279,8 +279,241 @@ function updateCurrentTime() {
     }
 }
 
+function collectFormData() {
+    return {
+        demographics: {
+            age: document.getElementById('patientAge')?.value,
+            gender: document.getElementById('patientGender')?.value,
+            ethnicity: document.getElementById('patientEthnicity')?.value,
+            weight: document.getElementById('patientWeight')?.value,
+            height: document.getElementById('patientHeight')?.value,
+            bmi: document.getElementById('patientBMI')?.value
+        },
+        presentation: {
+            chiefComplaint: document.getElementById('chiefComplaint')?.value,
+            symptoms: selectedSymptoms
+        },
+        timestamp: new Date().toISOString()
+    };
+}
+
+function showLoadingState() {
+    if (analyzeButton) {
+        analyzeButton.innerHTML = '🔬 Analyzing Patient Data...';
+        analyzeButton.disabled = true;
+        analyzeButton.style.opacity = '0.7';
+    }
+}
+
+function hideLoadingState() {
+    if (analyzeButton) {
+        analyzeButton.innerHTML = '🔬 Generate AI Diagnosis';
+        analyzeButton.disabled = false;
+        analyzeButton.style.opacity = '1';
+    }
+}
+
+async function simulateAIAnalysis() {
+    return new Promise(resolve => {
+        setTimeout(resolve, 3000);
+    });
+}
+
+function generateDiagnosisResults(formData) {
+    const results = [];
+    const symptomNames = formData.presentation.symptoms.map(s => s.name.toLowerCase());
+    
+    // Check for respiratory conditions
+    if (symptomNames.some(s => ['cough', 'fever', 'dyspnea', 'shortness of breath', 'chest pain'].includes(s))) {
+        results.push({
+            id: '1',
+            condition: 'Community-Acquired Pneumonia',
+            icd10: 'J44.1',
+            probability: 87,
+            confidence: 94,
+            urgency: 'high',
+            recommendations: [
+                'Immediate chest X-ray',
+                'Blood cultures and sputum culture',
+                'Antibiotic therapy per ATS/IDSA guidelines',
+                'Consider hospitalization if PSI >70'
+            ],
+            guidelines: 'ATS/IDSA 2019 CAP Guidelines'
+        });
+    }
+    
+    // Default result if no specific patterns found
+    if (results.length === 0) {
+        results.push({
+            id: 'default',
+            condition: 'Further Evaluation Required',
+            icd10: 'Z03.9',
+            probability: 65,
+            confidence: 75,
+            urgency: 'medium',
+            recommendations: [
+                'Complete additional history',
+                'Comprehensive physical examination',
+                'Basic laboratory studies',
+                'Follow-up in 1-2 weeks'
+            ],
+            guidelines: 'Clinical Practice Standards'
+        });
+    }
+    
+    return results.sort((a, b) => b.probability - a.probability);
+}
+
+function displayResults(results) {
+    const resultsSection = document.getElementById('results');
+    if (!resultsSection) return;
+    
+    const overallConfidence = Math.round(results.reduce((sum, r) => sum + r.confidence, 0) / results.length);
+    const highestRisk = results.some(r => r.urgency === 'high') ? 'High' : 
+                      results.some(r => r.urgency === 'medium') ? 'Medium' : 'Low';
+    
+    resultsSection.innerHTML = `
+        <div class="container">
+            <div class="results-header">
+                <h2>AI Diagnostic Analysis Complete</h2>
+                <p>Evidence-based differential diagnosis with clinical recommendations</p>
+                <div class="analysis-summary">
+                    <div class="summary-item">
+                        <span class="summary-label">Analysis Time:</span>
+                        <span class="summary-value">2.3s</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Confidence Level:</span>
+                        <span class="summary-value">${overallConfidence}%</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Risk Level:</span>
+                        <span class="summary-value">${highestRisk}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="results-grid">
+                ${results.map((result, index) => `
+                    <div class="result-card" style="animation-delay: ${index * 0.1}s">
+                        <div class="result-header">
+                            <div class="result-title">
+                                <h3>${result.condition}</h3>
+                                <span class="icd-code">${result.icd10}</span>
+                            </div>
+                            <div class="urgency-badge urgency-${result.urgency}">${result.urgency.toUpperCase()}</div>
+                        </div>
+                        
+                        <div class="result-stats">
+                            <div class="stat">
+                                <span class="stat-label">Probability</span>
+                                <span class="stat-value">${result.probability}%</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Confidence</span>
+                                <span class="stat-value">${result.confidence}%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="result-recommendations">
+                            <h4>Clinical Recommendations</h4>
+                            <ul>
+                                ${result.recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                            </ul>
+                        </div>
+                        
+                        <div class="result-actions">
+                            <button class="action-btn primary" onclick="exportResult('${result.id}')">Export</button>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+            
+            <div class="clinical-actions">
+                <button class="action-btn primary" onclick="generateNewAssessment()">🔄 New Assessment</button>
+                <button class="action-btn secondary" onclick="printResults()">🖨️ Print Report</button>
+            </div>
+        </div>
+    `;
+    
+    resultsSection.classList.remove('hidden');
+    resultsSection.scrollIntoView({ behavior: 'smooth' });
+    showNotification('Analysis complete! Review your results below.', 'success');
+}
+
+function viewDetails(resultId) {
+    showNotification('Detailed analysis view coming soon!', 'info');
+}
+
+function exportResult(resultId) {
+    showNotification('Exporting result...', 'info');
+}
+
+function exportAllResults() {
+    showNotification('Exporting all results...', 'info');
+}
+
+function printResults() {
+    window.print();
+}
+
+function generateNewAssessment() {
+    document.getElementById('diagnosisForm').reset();
+    selectedSymptoms = [];
+    updateSelectedSymptoms();
+    goToStep(0);
+    
+    const resultsSection = document.getElementById('results');
+    if (resultsSection) {
+        resultsSection.classList.add('hidden');
+    }
+    
+    showNotification('New assessment started', 'info');
+}
+
 function addCustomSymptom() {
     // Will implement custom symptom addition
+}
+
+// Mobile Menu Functions
+function toggleMobileMenu() {
+    const mobileSections = document.getElementById('mobileSections');
+    const menuChevron = document.getElementById('menuChevron');
+    
+    if (mobileSections.classList.contains('open')) {
+        mobileSections.classList.remove('open');
+        menuChevron.style.transform = 'rotate(0deg)';
+    } else {
+        mobileSections.classList.add('open');
+        menuChevron.style.transform = 'rotate(180deg)';
+    }
+}
+
+function selectMobileSection(stepIndex, title) {
+    // Update current section title
+    const currentTitle = document.getElementById('currentSectionTitle');
+    if (currentTitle) {
+        currentTitle.textContent = title;
+    }
+    
+    // Update active state in mobile menu
+    const mobileItems = document.querySelectorAll('.mobile-section-item');
+    mobileItems.forEach((item, index) => {
+        if (index === stepIndex) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+        }
+    });
+    
+    // Go to the selected step
+    goToStep(stepIndex);
+    
+    // Close the mobile menu
+    const mobileSections = document.getElementById('mobileSections');
+    const menuChevron = document.getElementById('menuChevron');
+    mobileSections.classList.remove('open');
+    menuChevron.style.transform = 'rotate(0deg)';
 }
 
 function removeSymptom(symptomId) {
@@ -314,9 +547,33 @@ function updateSelectedSymptoms() {
     });
 }
 
-function handleFormSubmission(e) {
+async function handleFormSubmission(e) {
     e.preventDefault();
-    showNotification('Form submitted successfully!', 'success');
+    
+    if (!validateCurrentStep()) return;
+    
+    // Collect all form data
+    const formData = collectFormData();
+    
+    // Show loading state
+    showLoadingState();
+    
+    try {
+        // Simulate AI processing
+        await simulateAIAnalysis();
+        
+        // Generate results
+        const results = generateDiagnosisResults(formData);
+        
+        // Display results
+        displayResults(results);
+        
+    } catch (error) {
+        console.error('Analysis failed:', error);
+        showNotification('Analysis failed. Please try again.', 'error');
+    } finally {
+        hideLoadingState();
+    }
 }
 
 function showNotification(message, type = 'info') {
@@ -375,6 +632,13 @@ document.head.appendChild(style);
 // Export functions to global scope for HTML event handlers
 window.removeSymptom = removeSymptom;
 window.goToStep = goToStep;
+window.viewDetails = viewDetails;
+window.exportResult = exportResult;
+window.exportAllResults = exportAllResults;
+window.printResults = printResults;
+window.generateNewAssessment = generateNewAssessment;
+window.toggleMobileMenu = toggleMobileMenu;
+window.selectMobileSection = selectMobileSection;
 
 function setupEnhancedSymptoms() {
     const symptomInput = document.getElementById('symptomInput');
