@@ -1415,245 +1415,393 @@ body {
     }
 }
 
-/* MOBILE - AGGRESSIVE 50% FONT SIZING */
+/* MOBILE - FORCE DESKTOP LAYOUT WITH 50% FONTS */
 @media (max-width: 768px) {
-    /* FORCE 50% FONT SIZES - HIGHEST PRIORITY */
+    /* NUCLEAR OPTION - FORCE EVERYTHING TO 50% */
     * {
         font-size: 50% !important;
-    }
-    
-    html {
-        font-size: 8px !important; /* Base size for rem calculations */
-    }
-    
-    body {
-        font-size: 5.5px !important; /* 50% of 11px */
         line-height: 1.2 !important;
     }
     
-    /* HIDE TABS - SHOW MOBILE MENU INSTEAD */
-    .assessment-tabs {
-        display: none !important;
+    html {
+        font-size: 6px !important; /* Even smaller base */
     }
     
-    /* Mobile Menu System */
-    .mobile-section-selector {
-        display: block !important;
-        background: white;
-        border: 1px solid #e5e7eb;
-        border-radius: 8px;
-        margin: 10px 0;
-        overflow: hidden;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    body {
+        font-size: 5px !important; /* Ultra small */
+        line-height: 1.1 !important;
+        zoom: 0.5 !important; /* Force browser zoom */
+        -webkit-text-size-adjust: none !important;
+        -moz-text-size-adjust: none !important;
+        -ms-text-size-adjust: none !important;
+        text-size-adjust: none !important;
     }
     
-    /* HIDE on Desktop - SHOW on Mobile */
-    .mobile-section-selector {
-        display: block !important;
-    }
-    
-    .assessment-tabs {
-        display: none !important;
-    }
-    
-    .mobile-menu-header {
-        background: #f8fafc;
-        padding: 8px 12px;
-        border-bottom: 1px solid #e5e7eb;
-        font-weight: 600;
-        font-size: 7px !important;
-        color: #374151;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-        transition: background 0.2s ease;
-    }
-    
-    .mobile-menu-header:hover {
-        background: #e5e7eb;
-    }
-    
-    .mobile-menu-header i {
-        transition: transform 0.3s ease;
-        font-size: 5px !important;
-        color: #6b7280;
-    }
-    
-    .mobile-menu-sections {
-        display: none;
-        background: white;
-    }
-    
-    .mobile-menu-sections.open {
-        display: block;
-    }
-    
-    .mobile-section-item {
-        display: flex;
-        align-items: center;
-        padding: 8px 12px;
-        border-bottom: 1px solid #f1f5f9;
-        cursor: pointer;
-        transition: background 0.2s ease;
-        font-size: 6px !important;
-    }
-    
-    .mobile-section-item:hover {
-        background: #f8fafc;
-    }
-    
-    .mobile-section-item.active {
-        background: #dbeafe;
-        color: #1d4ed8;
-        font-weight: 600;
-    }
-    
-    .mobile-section-number {
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background: #e5e7eb;
-        color: #6b7280;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 5px !important;
-        font-weight: 600;
-        margin-right: 8px;
-    }
-    
-    .mobile-section-item.active .mobile-section-number {
-        background: #1d4ed8;
-        color: white;
-    }
-    
-    /* AGGRESSIVE FONT OVERRIDES */
+    /* FORCE DESKTOP LAYOUT ON MOBILE */
     .container {
-        padding: 0 8px !important;
+        max-width: 100% !important;
+        padding: 0 4px !important;
     }
     
-    .brand-text h1 {
-        font-size: 6px !important;
+    .hero-grid {
+        grid-template-columns: 1fr 1fr !important; /* Force desktop grid */
+        gap: 8px !important;
     }
     
-    .brand-text span {
-        font-size: 4px !important;
+    .hero-section {
+        min-height: auto !important;
+        padding: 8px 0 !important;
     }
     
     .hero-title {
         font-size: 8px !important;
+        line-height: 1.1 !important;
     }
     
     .hero-description {
         font-size: 5px !important;
+        line-height: 1.2 !important;
     }
     
-    .primary-cta,
-    .secondary-cta {
-        font-size: 5px !important;
-        padding: 3px 6px !important;
-        width: 100%;
-        justify-content: center;
+    .hero-stats {
+        display: flex !important;
+        gap: 8px !important;
+        justify-content: center !important;
     }
     
-    .panel-header h3 {
+    .stat-number {
         font-size: 6px !important;
     }
     
-    .panel-header p {
-        font-size: 5px !important;
+    .stat-label {
+        font-size: 4px !important;
     }
     
+    /* FORCE DESKTOP TABS ON MOBILE */
+    .assessment-tabs {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        background: #f8fafc !important;
+        border-bottom: 1px solid #e5e7eb !important;
+        padding: 4px !important;
+    }
+    
+    .assessment-tab {
+        min-width: 80px !important;
+        padding: 4px 6px !important;
+        font-size: 4px !important;
+        white-space: nowrap !important;
+    }
+    
+    .tab-number {
+        width: 12px !important;
+        height: 12px !important;
+        font-size: 4px !important;
+    }
+    
+    .tab-title {
+        font-size: 4px !important;
+    }
+    
+    .tab-subtitle {
+        font-size: 3px !important;
+    }
+    
+    /* HIDE MOBILE MENU - SHOW DESKTOP TABS */
+    .mobile-section-selector {
+        display: none !important;
+    }
+    
+    /* FORM ELEMENTS - ULTRA SMALL */
     .input-group label {
-        font-size: 5px !important;
-        margin-bottom: 2px !important;
+        font-size: 4px !important;
+        margin-bottom: 1px !important;
     }
     
     .input-group input,
     .input-group select,
     .input-group textarea {
+        font-size: 4px !important;
+        padding: 2px 4px !important;
+        min-height: 16px !important;
+        border: 1px solid #d1d5db !important;
+    }
+    
+    .panel-header h3 {
         font-size: 5px !important;
-        padding: 3px 15px 3px 4px !important;
-        min-height: 20px;
+    }
+    
+    .panel-header p {
+        font-size: 4px !important;
+    }
+    
+    /* BUTTONS - TINY */
+    .primary-cta,
+    .secondary-cta {
+        font-size: 4px !important;
+        padding: 2px 4px !important;
+        height: 16px !important;
     }
     
     .nav-button {
-        font-size: 5px !important;
-        padding: 4px 8px !important;
-        width: 100%;
+        font-size: 4px !important;
+        padding: 2px 4px !important;
+        height: 16px !important;
     }
     
     .analyze-button {
-        font-size: 6px !important;
-        padding: 6px 12px !important;
-        width: 100%;
+        font-size: 5px !important;
+        padding: 3px 6px !important;
+        height: 18px !important;
     }
     
-    /* Layout adjustments */
-    .hero-actions {
-        flex-direction: column;
-        width: 100%;
-        gap: 8px;
-    }
-    
+    /* LAYOUT - FORCE DESKTOP */
     .form-grid {
-        grid-template-columns: 1fr !important;
-        gap: 8px !important;
-    }
-    
-    .assessment-navigation {
-        flex-direction: column;
-        gap: 8px;
-        padding: 8px;
-    }
-    
-    .clinical-interface {
-        border-radius: 8px;
-        margin: 8px 0;
-    }
-    
-    .interface-header {
-        padding: 8px;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
+        gap: 4px !important;
     }
     
     .assessment-form {
-        padding: 8px;
+        padding: 4px !important;
     }
     
-    /* Results mobile optimization */
+    .clinical-interface {
+        border-radius: 4px !important;
+        margin: 4px 0 !important;
+    }
+    
+    .interface-header {
+        padding: 4px !important;
+    }
+    
+    /* BRAND - TINY */
+    .brand-text h1 {
+        font-size: 4px !important;
+    }
+    
+    .brand-text span {
+        font-size: 3px !important;
+    }
+    
+    /* RESULTS - MICRO */
     .results-header h2 {
-        font-size: 6px !important;
+        font-size: 5px !important;
     }
     
     .results-header p {
-        font-size: 4px !important;
+        font-size: 3px !important;
     }
     
     .result-card h3 {
-        font-size: 6px !important;
+        font-size: 5px !important;
     }
     
     .result-card h4 {
-        font-size: 5px !important;
+        font-size: 4px !important;
     }
     
     .result-card li {
-        font-size: 4px !important;
+        font-size: 3px !important;
     }
     
     .action-btn {
-        font-size: 4px !important;
-        padding: 3px 6px !important;
+        font-size: 3px !important;
+        padding: 2px 4px !important;
+        height: 14px !important;
     }
     
     .summary-label {
-        font-size: 4px !important;
+        font-size: 3px !important;
     }
     
     .summary-value {
+        font-size: 4px !important;
+    }
+    
+    /* FORCE HORIZONTAL LAYOUT */
+    .hero-actions {
+        flex-direction: row !important;
+        gap: 4px !important;
+    }
+    
+    .assessment-navigation {
+        flex-direction: row !important;
+        gap: 4px !important;
+        padding: 4px !important;
+    }
+    
+    /* PROGRESS BAR - TINY */
+    .progress-bar {
+        height: 4px !important;
+    }
+    
+    .progress-fill {
+        height: 4px !important;
+    }
+    
+    /* FEATURE CARDS - COMPACT */
+    .feature-card {
+        padding: 8px !important;
+    }
+    
+    .feature-card h3 {
         font-size: 5px !important;
     }
+    
+    .feature-card p {
+        font-size: 3px !important;
+    }
+    
+    /* DASHBOARD - MICRO */
+    .dashboard-title {
+        font-size: 4px !important;
+    }
+    
+    .status-indicator {
+        font-size: 3px !important;
+    }
+    
+    .confidence-label {
+        font-size: 3px !important;
+    }
+    
+    .step-title {
+        font-size: 4px !important;
+    }
+    
+    .step-time {
+        font-size: 3px !important;
+    }
+    
+    .diagnosis-name {
+        font-size: 4px !important;
+    }
+    
+    .diagnosis-code {
+        font-size: 3px !important;
+    }
+    
+    /* ALERTS - TINY */
+    .alert {
+        font-size: 3px !important;
+        padding: 2px 4px !important;
+    }
+    
+    /* BADGE - MICRO */
+    .hero-badge {
+        font-size: 3px !important;
+        padding: 2px 4px !important;
+    }
+    
+    /* TRUST INDICATORS - TINY */
+    .trust-item {
+        font-size: 3px !important;
+    }
+    
+    /* SYMPTOMS - MICRO */
+    .selected-symptom {
+        font-size: 3px !important;
+        padding: 1px 2px !important;
+    }
+    
+    .category-tab {
+        font-size: 3px !important;
+        padding: 1px 2px !important;
+    }
+    
+    .symptom-chip {
+        font-size: 3px !important;
+        padding: 1px 2px !important;
+    }
+    
+    /* VITALS GRID - COMPACT */
+    .vitals-grid {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)) !important;
+        gap: 2px !important;
+    }
+    
+    .exam-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)) !important;
+        gap: 2px !important;
+    }
+    
+    .lab-grid {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)) !important;
+        gap: 2px !important;
+    }
+    
+    /* FORCE EVERYTHING SMALLER */
+    .section-header h2,
+    .assessment-header h2 {
+        font-size: 6px !important;
+    }
+    
+    .section-header p,
+    .assessment-header p {
+        font-size: 4px !important;
+    }
+    
+    .form-section h4 {
+        font-size: 4px !important;
+    }
+    
+    /* ICONS - TINY */
+    .fas, .fa {
+        font-size: 4px !important;
+    }
+    
+    /* SPACING - MINIMAL */
+    .space-xs { margin: 1px !important; padding: 1px !important; }
+    .space-sm { margin: 2px !important; padding: 2px !important; }
+    .space-md { margin: 4px !important; padding: 4px !important; }
+    .space-lg { margin: 6px !important; padding: 6px !important; }
+    .space-xl { margin: 8px !important; padding: 8px !important; }
+    
+    /* MOBILE TEST INDICATOR */
+    body::before {
+        content: "🔥 MOBILE 50% FONTS ACTIVE - ALL TEXT SHOULD BE TINY!" !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: #ff0000 !important;
+        color: white !important;
+        font-size: 6px !important;
+        padding: 4px 8px !important;
+        z-index: 99999 !important;
+        font-weight: bold !important;
+        text-align: center !important;
+        border-bottom: 2px solid #cc0000 !important;
+    }
+    
+    /* FORCE ALL TEXT TO BE VISIBLY SMALL */
+    .hero-title {
+        font-size: 6px !important;
+        color: #ff0000 !important;
+        border: 1px solid red !important;
+    }
+    
+    .hero-description {
+        font-size: 3px !important;
+        color: #ff0000 !important;
+        border: 1px solid red !important;
+    }
+    
+    .brand-text h1 {
+        font-size: 3px !important;
+        color: #ff0000 !important;
+        border: 1px solid red !important;
+    }
+    
+    /* REMOVE OLD MOBILE MENU - FORCE DESKTOP TABS */
+    .mobile-section-selector {
+        display: none !important;
+    }
+    
+    
+    
+
 }
 
 /* Desktop - Default State (Above Mobile) */
@@ -1709,230 +1857,7 @@ body {
     }
 }
 
-/* Mobile 50% Font Size Optimization */
-@media (max-width: 768px) {
-    /* Override all font sizes to be 50% smaller */
-    body {
-        font-size: 5.5px !important; /* 50% of 11px */
-        line-height: 1.3 !important;
-    }
-    
-    /* Brand - 50% smaller */
-    .brand-text h1 {
-        font-size: 8px !important; /* 50% of 16px */
-    }
-    
-    .brand-text span {
-        font-size: 5px !important; /* 50% of 10px */
-    }
-    
-    /* Hero - 50% smaller */
-    .hero-title {
-        font-size: clamp(0.75rem, 1.5vw, 1rem) !important; /* 50% smaller */
-    }
-    
-    .hero-description {
-        font-size: 6.5px !important; /* 50% of 13px */
-    }
-    
-    .stat-number {
-        font-size: 0.6rem !important; /* 50% of 1.2rem */
-    }
-    
-    .stat-label {
-        font-size: 5px !important; /* 50% of 10px */
-    }
-    
-    /* Buttons - 50% smaller */
-    .primary-cta {
-        font-size: 6px !important; /* 50% of 12px */
-        padding: 4px 8px !important;
-    }
-    
-    .secondary-cta {
-        font-size: 6px !important;
-        padding: 4px 8px !important;
-    }
-    
-    .nav-btn {
-        font-size: 5.5px !important; /* 50% of 11px */
-        padding: 2px 6px !important;
-    }
-    
-    /* Section headers - 50% smaller */
-    .section-header h2,
-    .assessment-header h2 {
-        font-size: 0.75rem !important; /* 50% of 1.5rem */
-    }
-    
-    .section-header p,
-    .assessment-header p {
-        font-size: 6.5px !important; /* 50% of 13px */
-    }
-    
-    /* Assessment tabs - 50% smaller */
-    .tab-number {
-        width: 16px !important;
-        height: 16px !important;
-        font-size: 7px !important; /* 50% of 14px */
-    }
-    
-    .tab-title {
-        font-size: 7px !important; /* 50% of 14px */
-    }
-    
-    .tab-subtitle {
-        font-size: 6px !important; /* 50% of 12px */
-    }
-    
-    /* Panel content - 50% smaller */
-    .panel-header h3 {
-        font-size: 8px !important; /* 50% of 16px */
-    }
-    
-    .panel-header p {
-        font-size: 6px !important; /* 50% of 12px */
-    }
-    
-    /* Form elements - 50% smaller */
-    .input-group label {
-        font-size: 6px !important; /* 50% of 12px */
-        margin-bottom: 2px !important;
-    }
-    
-    .input-group input,
-    .input-group select,
-    .input-group textarea {
-        font-size: 6px !important; /* 50% of 12px */
-        padding: 4px 20px 4px 6px !important; /* Account for icons */
-    }
-    
-    .form-section h4 {
-        font-size: 7px !important; /* 50% of 14px */
-    }
-    
-    /* Navigation - 50% smaller */
-    .nav-button {
-        font-size: 7px !important; /* 50% of 14px */
-        padding: 6px 12px !important;
-    }
-    
-    .analyze-button {
-        font-size: 8px !important; /* 50% of 16px */
-        padding: 8px 16px !important;
-    }
-    
-    /* Feature cards - 50% smaller */
-    .feature-card h3 {
-        font-size: 10px !important; /* 50% of 20px */
-    }
-    
-    .feature-card p {
-        font-size: 6px !important;
-    }
-    
-    /* Dashboard elements - 50% smaller */
-    .dashboard-title {
-        font-size: 7px !important;
-    }
-    
-    .status-indicator {
-        font-size: 6.5px !important;
-    }
-    
-    .confidence-label {
-        font-size: 6.5px !important;
-    }
-    
-    .step-title {
-        font-size: 7px !important;
-    }
-    
-    .step-time {
-        font-size: 6px !important;
-    }
-    
-    .diagnosis-name {
-        font-size: 7px !important;
-    }
-    
-    .diagnosis-code {
-        font-size: 6px !important;
-    }
-    
-    /* Progress indicators */
-    .progress-label {
-        font-size: 6.5px !important;
-    }
-    
-    .progress-text {
-        font-size: 7px !important;
-    }
-    
-    /* Trust indicators */
-    .trust-item {
-        font-size: 6.5px !important;
-    }
-    
-    /* Badge */
-    .hero-badge {
-        font-size: 6.5px !important;
-    }
-    
-    /* Alerts */
-    .alert {
-        font-size: 6.5px !important;
-    }
-    
-    /* Selected symptoms */
-    .selected-symptom {
-        font-size: 6.5px !important;
-    }
-    
-    /* Category tabs */
-    .category-tab {
-        font-size: 6.5px !important;
-    }
-    
-    /* Symptom chips */
-    .symptom-chip {
-        font-size: 6.5px !important;
-    }
-    
-    /* Results section mobile fonts */
-    .results-header h2 {
-        font-size: 8px !important;
-    }
-    
-    .results-header p {
-        font-size: 6px !important;
-    }
-    
-    .summary-label {
-        font-size: 6px !important;
-    }
-    
-    .summary-value {
-        font-size: 7px !important;
-    }
-    
-    .result-card h3 {
-        font-size: 8px !important;
-    }
-    
-    .result-card h4 {
-        font-size: 7px !important;
-    }
-    
-    .result-card li {
-        font-size: 6px !important;
-    }
-    
-    .action-btn {
-        font-size: 6px !important;
-        padding: 4px 8px !important;
-    }
-}
+
 
 /* Results Section Styles */
 .results-section {

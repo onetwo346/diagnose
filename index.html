@@ -356,57 +356,7 @@
                     </button>
                 </div>
 
-                <!-- Mobile Menu System (Hidden on Desktop) -->
-                <div class="mobile-section-selector" style="display: none;">
-                    <div class="mobile-menu-header" onclick="toggleMobileMenu()">
-                        <span id="currentSectionTitle">👤 Demographics - Patient Info</span>
-                        <i class="fas fa-chevron-down" id="menuChevron"></i>
-                    </div>
-                    <div class="mobile-menu-sections" id="mobileSections">
-                        <div class="mobile-section-item active" onclick="selectMobileSection(0, '👤 Demographics - Patient Info')">
-                            <div class="mobile-section-number">1</div>
-                            <div>
-                                <div>Demographics</div>
-                                <div style="font-size: 4px; color: #6b7280;">Patient Info</div>
-                            </div>
-                        </div>
-                        <div class="mobile-section-item" onclick="selectMobileSection(1, '🩺 Chief Complaint - Present Illness')">
-                            <div class="mobile-section-number">2</div>
-                            <div>
-                                <div>Chief Complaint</div>
-                                <div style="font-size: 4px; color: #6b7280;">Present Illness</div>
-                            </div>
-                        </div>
-                        <div class="mobile-section-item" onclick="selectMobileSection(2, '📋 History - Medical & Social')">
-                            <div class="mobile-section-number">3</div>
-                            <div>
-                                <div>History</div>
-                                <div style="font-size: 4px; color: #6b7280;">Medical & Social</div>
-                            </div>
-                        </div>
-                        <div class="mobile-section-item" onclick="selectMobileSection(3, '🔍 Physical Exam - Vitals & Systems')">
-                            <div class="mobile-section-number">4</div>
-                            <div>
-                                <div>Physical Exam</div>
-                                <div style="font-size: 4px; color: #6b7280;">Vitals & Systems</div>
-                            </div>
-                        </div>
-                        <div class="mobile-section-item" onclick="selectMobileSection(4, '🧪 Investigations - Labs & Imaging')">
-                            <div class="mobile-section-number">5</div>
-                            <div>
-                                <div>Investigations</div>
-                                <div style="font-size: 4px; color: #6b7280;">Labs & Imaging</div>
-                            </div>
-                        </div>
-                        <div class="mobile-section-item" onclick="selectMobileSection(5, '💊 Medications - Current & Allergies')">
-                            <div class="mobile-section-number">6</div>
-                            <div>
-                                <div>Medications</div>
-                                <div style="font-size: 4px; color: #6b7280;">Current & Allergies</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 
                 <form id="diagnosisForm" class="assessment-form">
                     <!-- Demographics Panel -->
@@ -625,7 +575,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Physical Examination Tab -->
                     <div class="assessment-panel" id="examination-tab">
                         <div class="panel-header">
