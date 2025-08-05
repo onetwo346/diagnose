@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedDx Pro - Professional AI Diagnostic Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Modern Header -->
+    <header class="modern-header">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="brand">
+                    <div class="brand-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="brand-text">
+                        <h1>MedDx Pro</h1>
+                        <span>AI Diagnostic Platform</span>
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="hero-pattern"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>HIPAA Compliant • Evidence-Based</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Next-Generation
+                        <span class="hero-highlight">AI Diagnostics</span>
+                        for Healthcare Professionals
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Transform your clinical workflow with AI-powered differential diagnosis, 
+                        real-time decision support, and automated documentation. Trusted by 
+                        50,000+ medical professionals worldwide.
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">98.7%</div>
+                            <div class="stat-label">Diagnostic Accuracy</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2.3s</div>
+                            <div class="stat-label">Analysis Time</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50K+</div>
+                            <div class="stat-label">Professionals</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <button class="primary-cta">
+                            <i class="fas fa-rocket"></i>
+                            Start Analysis Now
+                        </button>
+                        <button class="secondary-cta">
+                            <i class="fas fa-play"></i>
+                            Watch Demo
+                        </button>
+                    </div>
+                    
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>FDA Cleared</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>AMA Endorsed</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>SOC 2 Certified</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="dashboard-container">
+                        <div class="dashboard-header">
+                            <div class="dashboard-title">
+                                <i class="fas fa-brain pulse"></i>
+                                <span>AI Diagnostic Engine</span>
+                            </div>
+                            <div class="status-indicator">
+                                <div class="status-dot active"></div>
+                                <span>Live Analysis</span>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-content">
+                            <div class="patient-card">
+                                <div class="patient-info">
+                                    <div class="patient-id">Patient #MD-2024-0847</div>
+                                    <div class="patient-status">
+                                        <i class="fas fa-clock"></i>
+                                        <span>Analysis in progress...</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="confidence-meter">
+                                    <div class="confidence-label">Diagnostic Confidence</div>
+                                    <div class="confidence-bar">
+                                        <div class="confidence-fill" style="width: 94%"></div>
+                                    </div>
+                                    <div class="confidence-value">94%</div>
+                                </div>
+                            </div>
+                            
+                            <div class="analysis-steps">
+                                <div class="step completed">
+                                    <div class="step-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="step-info">
+                                        <div class="step-title">Symptom Analysis</div>
+                                        <div class="step-time">0.8s</div>
+                                    </div>
+                                </div>
+                                <div class="step completed">
+                                    <div class="step-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="step-info">
+                                        <div class="step-title">Lab Integration</div>
+                                        <div class="step-time">1.2s</div>
+                                    </div>
+                                </div>
+                                <div class="step active">
+                                    <div class="step-icon">
+                                        <i class="fas fa-cog fa-spin"></i>
+                                    </div>
+                                    <div class="step-info">
+                                        <div class="step-title">Differential Diagnosis</div>
+                                        <div class="step-time">2.1s</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="diagnosis-preview">
+                                <div class="diagnosis-item">
+                                    <div class="diagnosis-main">
+                                        <div class="diagnosis-name">Community-Acquired Pneumonia</div>
+                                        <div class="diagnosis-code">J44.1</div>
+                                    </div>
+                                    <div class="diagnosis-probability">87%</div>
+                                </div>
+                                <div class="diagnosis-item">
+                                    <div class="diagnosis-main">
+                                        <div class="diagnosis-name">Upper Respiratory Infection</div>
+                                        <div class="diagnosis-code">J06.9</div>
+                                    </div>
+                                    <div class="diagnosis-probability">72%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="floating-alerts">
+                        <div class="alert alert-success">
+                            <i class="fas fa-shield-check"></i>
+                            <span>Drug interaction check complete</span>
+                        </div>
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Consider antibiotic resistance patterns</span>
+                        </div>
+                        <div class="alert alert-info">
+                            <i class="fas fa-book-medical"></i>
+                            <span>ATS/IDSA 2019 Guidelines Applied</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Overview -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Complete Clinical Decision Support</h2>
+                <p>Everything you need for evidence-based medicine in one platform</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Comprehensive Assessment</h3>
+                    <p>Multi-system clinical evaluation with structured data collection and real-time validation</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Lab Integration</h3>
+                    <p>Direct integration with laboratory systems for automated result interpretation</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI Differential Diagnosis</h3>
+                    <p>Machine learning algorithms trained on millions of clinical cases worldwide</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-medical"></i>
+                    </div>
+                    <h3>Automated Documentation</h3>
+                    <p>Generate SOAP notes, discharge summaries, and ICD-10 coding automatically</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Clinical Decision Support</h3>
+                    <p>Real-time alerts for drug interactions, allergies, and safety considerations</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Enterprise Security</h3>
+                    <p>HIPAA compliant with end-to-end encryption and comprehensive audit trails</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinical Assessment Interface -->
+    <section class="assessment-section" id="diagnosis">
+        <div class="container">
+            <div class="assessment-header">
+                <h2>Professional Clinical Assessment</h2>
+                <p>Complete patient evaluation with AI-powered diagnostic assistance</p>
+            </div>
+            
+            <div class="clinical-interface">
+                <div class="interface-header">
+                    <div class="patient-context">
+                        <div class="patient-id">
+                            <i class="fas fa-user-md"></i>
+                            <span>New Patient Assessment</span>
+                        </div>
+                        <div class="timestamp">
+                            <i class="fas fa-clock"></i>
+                            <span id="currentTime">--</span>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-tracker">
+                        <div class="progress-info">
+                            <span class="progress-label">Assessment Progress</span>
+                            <span class="progress-text" id="progressText">Step 1 of 6</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="assessment-tabs">
+                    <button type="button" class="assessment-tab active" data-tab="demographics">
+                        <div class="tab-number">1</div>
+                        <div class="tab-content">
+                            <div class="tab-title">Demographics</div>
+                            <div class="tab-subtitle">Patient Info</div>
+                        </div>
+                        <div class="tab-status">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                    </button>
+                    
+                    <button type="button" class="assessment-tab" data-tab="presentation">
+                        <div class="tab-number">2</div>
+                        <div class="tab-content">
+                            <div class="tab-title">Chief Complaint</div>
+                            <div class="tab-subtitle">Present Illness</div>
+                        </div>
+                        <div class="tab-status">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                    </button>
+                    
+                    <button type="button" class="assessment-tab" data-tab="history">
+                        <div class="tab-number">3</div>
+                        <div class="tab-content">
+                            <div class="tab-title">History</div>
+                            <div class="tab-subtitle">Medical & Social</div>
+                        </div>
+                        <div class="tab-status">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                    </button>
+                    
+                    <button type="button" class="assessment-tab" data-tab="examination">
+                        <div class="tab-number">4</div>
+                        <div class="tab-content">
+                            <div class="tab-title">Physical Exam</div>
+                            <div class="tab-subtitle">Vitals & Systems</div>
+                        </div>
+                        <div class="tab-status">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                    </button>
+                    
+                    <button type="button" class="assessment-tab" data-tab="investigations">
+                        <div class="tab-number">5</div>
+                        <div class="tab-content">
+                            <div class="tab-title">Investigations</div>
+                            <div class="tab-subtitle">Labs & Imaging</div>
+                        </div>
+                        <div class="tab-status">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                    </button>
+                    
+                    <button type="button" class="assessment-tab" data-tab="medications">
+                        <div class="tab-number">6</div>
+                        <div class="tab-content">
+                            <div class="tab-title">Medications</div>
+                            <div class="tab-subtitle">Current & Allergies</div>
+                        </div>
+                        <div class="tab-status">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                    </button>
+                </div>
+                
+                <form id="diagnosisForm" class="assessment-form">
+                    <!-- Demographics Panel -->
+                    <div class="assessment-panel active" id="demographics-tab">
+                        <div class="panel-header">
+                            <h3>Patient Demographics</h3>
+                            <p>Basic patient information and anthropometric data</p>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label>Age</label>
+                                <input type="number" id="patientAge" required placeholder="Years">
+                                <div class="input-icon">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label>Gender</label>
+                                <select id="patientGender" required>
+                                    <option value="">Select gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="non-binary">Non-binary</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="input-icon">
+                                    <i class="fas fa-venus-mars"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label>Ethnicity</label>
+                                <select id="patientEthnicity">
+                                    <option value="">Select ethnicity</option>
+                                    <option value="caucasian">Caucasian</option>
+                                    <option value="african-american">African American</option>
+                                    <option value="hispanic">Hispanic/Latino</option>
+                                    <option value="asian">Asian</option>
+                                    <option value="native-american">Native American</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="input-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label>Weight (kg)</label>
+                                <input type="number" id="patientWeight" placeholder="Weight" step="0.1">
+                                <div class="input-icon">
+                                    <i class="fas fa-weight"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label>Height (cm)</label>
+                                <input type="number" id="patientHeight" placeholder="Height">
+                                <div class="input-icon">
+                                    <i class="fas fa-ruler-vertical"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label>BMI</label>
+                                <input type="number" id="patientBMI" placeholder="Auto-calculated" readonly>
+                                <div class="input-icon">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- History Tab -->
+                    <div class="assessment-panel" id="history-tab">
+                        <div class="panel-header">
+                            <h3>Medical & Social History</h3>
+                            <p>Comprehensive medical background and social factors</p>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <div class="input-group full-width">
+                                <label>Past Medical History</label>
+                                <textarea id="pastMedicalHistory" rows="3" placeholder="Previous medical conditions, surgeries, hospitalizations..."></textarea>
+                                <div class="input-icon">
+                                    <i class="fas fa-file-medical"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group full-width">
+                                <label>Current Medications</label>
+                                <textarea id="currentMedications" rows="3" placeholder="List current medications, dosages, and frequency..."></textarea>
+                                <div class="input-icon">
+                                    <i class="fas fa-pills"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label>Smoking Status</label>
+                                <select id="smokingStatus">
+                                    <option value="">Select status</option>
+                                    <option value="never">Never smoked</option>
+                                    <option value="former">Former smoker</option>
+                                    <option value="current">Current smoker</option>
+                                </select>
+                                <div class="input-icon">
+                                    <i class="fas fa-smoking-ban"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label>Alcohol Use</label>
+                                <select id="alcoholUse">
+                                    <option value="">Select usage</option>
+                                    <option value="none">None</option>
+                                    <option value="occasional">Occasional (1-2 drinks/week)</option>
+                                    <option value="moderate">Moderate (3-7 drinks/week)</option>
+                                    <option value="heavy">Heavy (>7 drinks/week)</option>
+                                </select>
+                                <div class="input-icon">
+                                    <i class="fas fa-wine-glass"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group full-width">
+                                <label>Family History</label>
+                                <textarea id="familyHistory" rows="3" placeholder="Significant family medical history, genetic conditions..."></textarea>
+                                <div class="input-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group full-width">
+                                <label>Allergies</label>
+                                <textarea id="allergies" rows="2" placeholder="Drug allergies, food allergies, environmental allergies..."></textarea>
+                                <div class="input-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="assessment-panel" id="presentation-tab">
+                        <div class="panel-header">
+                            <h3>Chief Complaint & Present Illness</h3>
+                            <p>Primary presenting symptoms and clinical history</p>
+                        </div>
+                        
+                        <div class="form-section">
+                            <div class="input-group full-width">
+                                <label>Chief Complaint</label>
+                                <textarea id="chiefComplaint" rows="3" placeholder="Primary reason for consultation..."></textarea>
+                            </div>
+                            
+                            <div class="symptom-builder">
+                                <label>Present Illness</label>
+                                <div class="symptom-input-row">
+                                    <input type="text" id="symptomInput" placeholder="Add symptom...">
+                                    <select id="symptomSeverity" class="severity-select">
+                                        <option value="mild">Mild</option>
+                                        <option value="moderate">Moderate</option>
+                                        <option value="severe">Severe</option>
+                                    </select>
+                                    <input type="text" id="symptomDuration" placeholder="Duration">
+                                    <button type="button" id="addSymptom" class="add-symptom-btn">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                
+                                <div class="symptom-categories">
+                                    <div class="category-tabs">
+                                        <button type="button" class="category-tab active" data-category="constitutional">
+                                            <i class="fas fa-thermometer-half"></i>
+                                            Constitutional
+                                        </button>
+                                        <button type="button" class="category-tab" data-category="respiratory">
+                                            <i class="fas fa-lungs"></i>
+                                            Respiratory
+                                        </button>
+                                        <button type="button" class="category-tab" data-category="cardiovascular">
+                                            <i class="fas fa-heartbeat"></i>
+                                            Cardiovascular
+                                        </button>
+                                        <button type="button" class="category-tab" data-category="gastrointestinal">
+                                            <i class="fas fa-stomach"></i>
+                                            GI
+                                        </button>
+                                        <button type="button" class="category-tab" data-category="neurological">
+                                            <i class="fas fa-brain"></i>
+                                            Neuro
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="symptoms-grid">
+                                        <div class="symptom-chip" data-symptom="Fever">
+                                            <i class="fas fa-thermometer-half"></i>
+                                            Fever
+                                        </div>
+                                        <div class="symptom-chip" data-symptom="Fatigue">
+                                            <i class="fas fa-battery-quarter"></i>
+                                            Fatigue
+                                        </div>
+                                        <div class="symptom-chip" data-symptom="Weight loss">
+                                            <i class="fas fa-weight"></i>
+                                            Weight loss
+                                        </div>
+                                        <div class="symptom-chip" data-symptom="Night sweats">
+                                            <i class="fas fa-moon"></i>
+                                            Night sweats
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="selected-symptoms" id="selectedSymptoms"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Physical Examination Tab -->
+                    <div class="assessment-panel" id="examination-tab">
+                        <div class="panel-header">
+                            <h3>Physical Examination</h3>
+                            <p>Vital signs and systematic physical examination findings</p>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h4>Vital Signs</h4>
+                            <div class="vitals-grid">
+                                <div class="input-group">
+                                    <label>Blood Pressure (mmHg)</label>
+                                    <div class="bp-input">
+                                        <input type="number" id="systolicBP" placeholder="120">
+                                        <span>/</span>
+                                        <input type="number" id="diastolicBP" placeholder="80">
+                                    </div>
+                                    <div class="input-icon">
+                                        <i class="fas fa-heartbeat"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label>Heart Rate (bpm)</label>
+                                    <input type="number" id="heartRate" placeholder="72">
+                                    <div class="input-icon">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label>Temperature (°C)</label>
+                                    <input type="number" id="temperature" placeholder="37.0" step="0.1">
+                                    <div class="input-icon">
+                                        <i class="fas fa-thermometer-half"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label>Respiratory Rate (/min)</label>
+                                    <input type="number" id="respiratoryRate" placeholder="16">
+                                    <div class="input-icon">
+                                        <i class="fas fa-lungs"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label>O2 Saturation (%)</label>
+                                    <input type="number" id="oxygenSat" placeholder="98">
+                                    <div class="input-icon">
+                                        <i class="fas fa-wind"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h4>Physical Examination Findings</h4>
+                            <div class="exam-grid">
+                                <div class="input-group">
+                                    <label>General Appearance</label>
+                                    <textarea id="generalExam" rows="2" placeholder="Well-appearing, no acute distress..."></textarea>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label>HEENT</label>
+                                    <textarea id="heentExam" rows="2" placeholder="Head, eyes, ears, nose, throat findings..."></textarea>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label>Cardiovascular</label>
+                                    <textarea id="cvExam" rows="2" placeholder="Heart sounds, murmurs, peripheral pulses..."></textarea>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label>Respiratory</label>
+                                    <textarea id="respExam" rows="2" placeholder="Breath sounds, chest expansion..."></textarea>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label>Abdominal</label>
+                                    <textarea id="abdExam" rows="2" placeholder="Inspection, palpation, bowel sounds..."></textarea>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label>Neurological</label>
+                                    <textarea id="neuroExam" rows="2" placeholder="Mental status, cranial nerves, reflexes..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Investigations Tab -->
+                    <div class="assessment-panel" id="investigations-tab">
+                        <div class="panel-header">
+                            <h3>Laboratory & Diagnostic Studies</h3>
+                            <p>Laboratory results, imaging studies, and diagnostic tests</p>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h4>Laboratory Results</h4>
+                            <div class="lab-grid">
+                                <div class="input-group">
+                                    <label>Hemoglobin (g/dL)</label>
+                                    <input type="number" id="hemoglobin" placeholder="14.0" step="0.1">
+                                    <div class="input-icon">
+                                        <i class="fas fa-tint"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label>White Blood Cells (×10³/μL)</label>
+                                    <input type="number" id="wbc" placeholder="7.5" step="0.1">
+                                    <div class="input-icon">
+                                        <i class="fas fa-shield-virus"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label>Platelets (×10³/μL)</label>
+                                    <input type="number" id="platelets" placeholder="250">
+                                    <div class="input-icon">
+                                        <i class="fas fa-circle"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label>Glucose (mg/dL)</label>
+                                    <input type="number" id="glucose" placeholder="90">
+                                    <div class="input-icon">
+                                        <i class="fas fa-cube"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label>Creatinine (mg/dL)</label>
+                                    <input type="number" id="creatinine" placeholder="1.0" step="0.1">
+                                    <div class="input-icon">
+                                        <i class="fas fa-kidney"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label>Sodium (mEq/L)</label>
+                                    <input type="number" id="sodium" placeholder="140">
+                                    <div class="input-icon">
+                                        <i class="fas fa-atom"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <div class="input-group full-width">
+                                <label>Imaging Studies</label>
+                                <textarea id="imagingStudies" rows="3" placeholder="Chest X-ray, CT scan, MRI findings..."></textarea>
+                                <div class="input-icon">
+                                    <i class="fas fa-x-ray"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group full-width">
+                                <label>Other Diagnostic Tests</label>
+                                <textarea id="otherTests" rows="3" placeholder="ECG, echocardiogram, pulmonary function tests..."></textarea>
+                                <div class="input-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Medications Tab -->
+                    <div class="assessment-panel" id="medications-tab">
+                        <div class="panel-header">
+                            <h3>Current Medications & Treatments</h3>
+                            <p>Complete medication list and current treatments</p>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <div class="input-group full-width">
+                                <label>Current Medications</label>
+                                <textarea id="medicationList" rows="4" placeholder="List all current medications with dosages and frequencies...
+Example: Lisinopril 10mg daily, Metformin 500mg twice daily"></textarea>
+                                <div class="input-icon">
+                                    <i class="fas fa-pills"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group full-width">
+                                <label>Recent Treatments</label>
+                                <textarea id="recentTreatments" rows="3" placeholder="Recent procedures, interventions, or treatments..."></textarea>
+                                <div class="input-icon">
+                                    <i class="fas fa-procedures"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group full-width">
+                                <label>Additional Clinical Notes</label>
+                                <textarea id="additionalNotes" rows="4" placeholder="Additional observations, clinical pearls, differential considerations, or other relevant information..."></textarea>
+                                <div class="input-icon">
+                                    <i class="fas fa-notes-medical"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="assessment-navigation">
+                        <button type="button" id="prevStep" class="nav-button secondary">
+                            <i class="fas fa-arrow-left"></i>
+                            Previous
+                        </button>
+                        
+                        <div class="step-indicators">
+                            <div class="step-dot active"></div>
+                            <div class="step-dot"></div>
+                            <div class="step-dot"></div>
+                            <div class="step-dot"></div>
+                            <div class="step-dot"></div>
+                            <div class="step-dot"></div>
+                        </div>
+                        
+                        <button type="button" id="nextStep" class="nav-button primary">
+                            Next
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        
+                        <button type="submit" class="analyze-button" style="display: none;">
+                            <i class="fas fa-brain"></i>
+                            Generate AI Diagnosis
+                            <div class="button-loader" id="loadingSpinner"></div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section hidden" id="results">
+        <div class="container">
+            <!-- Results content will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
